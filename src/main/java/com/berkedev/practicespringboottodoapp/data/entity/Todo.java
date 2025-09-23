@@ -61,6 +61,7 @@ public class Todo {
         return new Builder();
     }
 
+    @Setter
     public static class Builder {
         private String title;
         private String description;
@@ -68,41 +69,6 @@ public class Todo {
         private LocalDateTime dueAt;
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
-
-        public Builder setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-
-        public Builder setDescription(String description) {
-            this.description = description;
-            return this;
-        }
-
-        public Builder setCompleted(boolean completed) {
-            this.completed = completed;
-            return this;
-        }
-
-        public Builder setDueAt(LocalDateTime dueAt) {
-            this.dueAt = dueAt;
-            return this;
-        }
-
-        public Builder setCreatedAt(LocalDateTime createdAt) {
-            this.createdAt = createdAt;
-            return this;
-        }
-
-        public Builder setUpdatedAt(LocalDateTime updatedAt) {
-            this.updatedAt = updatedAt;
-            return this;
-        }
-
-        public Builder withCurrentTimestamp() {
-            this.createdAt = LocalDateTime.now();
-            return this;
-        }
 
         public Todo build() {return new Todo(this);}
     }
