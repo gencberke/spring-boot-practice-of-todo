@@ -3,17 +3,14 @@ package com.berkedev.practicespringboottodoapp.data.entity;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
-import lombok.Generated;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "todo")
-@Data
-@RequiredArgsConstructor
+@Setter
+@Getter
 @NoArgsConstructor
 public class Todo {
 
@@ -35,7 +32,7 @@ public class Todo {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @Nullable
+    @Column(nullable = false)
     private LocalDateTime updatedAt;
 
     @PrePersist
