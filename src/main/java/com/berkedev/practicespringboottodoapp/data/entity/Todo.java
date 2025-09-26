@@ -1,8 +1,6 @@
 package com.berkedev.practicespringboottodoapp.data.entity;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -47,6 +45,11 @@ public class Todo {
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
+
+    /**
+     * this builder not initialized by @Lombok's builder because I wanted to practice on how a builder works and how to
+     * write an efficient builder without @Lombok's builder.
+     */
 
     private Todo(Builder builder) {
         this.title = builder.title;

@@ -1,6 +1,5 @@
 package com.berkedev.practicespringboottodoapp.data.dto;
 
-import com.berkedev.practicespringboottodoapp.data.entity.Todo;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,6 +7,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+
+/**
+ * purpose of this class is to define a to-do object that can be created by client. the fields that wrote down below are
+ * will be given from client
+ */
 
 @Data
 @NoArgsConstructor
@@ -18,6 +22,11 @@ public class TodoCreateRequest {
     private String description;
     private boolean completed = false;
     private LocalDateTime dueAt;
+
+    /**
+     * this builder not initialized by @Lombok's builder because I wanted to practice on how a builder works and how to
+     * write an efficient builder without @Lombok's builder.
+     */
 
     private TodoCreateRequest(Builder builder) {
         this.title = builder.title;
@@ -37,6 +46,8 @@ public class TodoCreateRequest {
         private boolean completed = false;
         private LocalDateTime dueAt;
 
-        public TodoCreateRequest build() {return new TodoCreateRequest(this);}
+        public TodoCreateRequest build() {
+            return new TodoCreateRequest(this);
+        }
     }
 }

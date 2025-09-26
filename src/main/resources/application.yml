@@ -1,11 +1,13 @@
 spring:
+  jackson:
+    date-format: "yyyy-MM-dd'T'HH:mm:ss"
   datasource:
     url: jdbc:postgresql://localhost:5433/todo_db
     username: todo_user
     password: secret
   jpa:
     hibernate:
-      ddl-auto: update  # geli?imde 'update', prod'da migration önerilir
+      ddl-auto: update  # geli?imde 'update', prod'da migration ï¿½nerilir
     properties:
       hibernate:
         format_sql: true
