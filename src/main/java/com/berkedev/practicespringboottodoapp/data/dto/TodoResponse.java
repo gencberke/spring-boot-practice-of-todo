@@ -27,8 +27,6 @@ public class TodoResponse {
     public static Builder builder() {
         return new Builder();
     }
-
-    @Setter
     public static class Builder {
         private String title;
         private String description;
@@ -36,6 +34,36 @@ public class TodoResponse {
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
         private LocalDateTime dueAt;
+
+        public Builder setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public Builder setCompleted(boolean completed) {
+            this.completed = completed;
+            return this;
+        }
+
+        public Builder setCreatedAt(LocalDateTime createdAt) {
+            this.createdAt = createdAt;
+            return this;
+        }
+
+        public Builder setUpdatedAt(LocalDateTime updatedAt) {
+            this.updatedAt = updatedAt;
+            return this;
+        }
+
+        public Builder setDueAt(LocalDateTime dueAt) {
+            this.dueAt = dueAt;
+            return this;
+        }
 
         public TodoResponse build() {
             return new TodoResponse(this);
